@@ -1,4 +1,4 @@
-# Hana & Butrint Lushaku Wedding Invite
+# Ana & Blerton Krasniqi Wedding Invite
 
 A static one-page wedding invitation for GitHub Pages.
 

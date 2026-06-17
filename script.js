@@ -1,4 +1,5 @@
-const weddingStart = new Date("2026-06-13T19:00:00+02:00");
+const weddingStart = new Date("2026-08-11T19:00:00+02:00");
+const rsvpPhone = "38349123456";
 
 const countdownFields = {
   days: document.querySelector("[data-days]"),
@@ -43,3 +44,23 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
+
+const rsvpForm = document.querySelector("[data-rsvp-form]");
+
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(rsvpForm);
+    const attendance = formData.get("attendance");
+    const comments = formData.get("comments")?.toString().trim();
+    const message = [
+      `Përgjigjja ime: ${attendance}`,
+      comments ? `Koment: ${comments}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = `https://wa.me/${rsvpPhone}?text=${encodeURIComponent(message)}`;
+  });
+}

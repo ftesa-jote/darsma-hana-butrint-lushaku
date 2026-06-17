@@ -229,7 +229,8 @@ p {
 .intro,
 .countdown,
 .timeline,
-.closing {
+.closing,
+.rsvp {
   text-align: center;
 }
 
@@ -240,7 +241,8 @@ p {
 }
 
 .intro p:not(.script-label),
-.closing p:not(.script-label) {
+.closing p:not(.script-label),
+.rsvp-contact {
   max-width: 33rem;
   margin: 24px auto 0;
 }
@@ -389,6 +391,117 @@ p {
   background:
     linear-gradient(rgba(255, 250, 245, 0.62), rgba(242, 231, 223, 0.82)),
     url("images/wedding-background.png") center bottom / cover;
+}
+
+.rsvp {
+  background:
+    linear-gradient(rgba(255, 250, 245, 0.84), rgba(255, 250, 245, 0.92)),
+    url("images/wedding-venue-outisde.jpg") center / cover;
+}
+
+.rsvp-form {
+  display: grid;
+  gap: 18px;
+  max-width: 34rem;
+  margin: 32px auto 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  text-align: left;
+}
+
+.rsvp-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.rsvp-form legend {
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rsvp-form label {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.rsvp-form fieldset label {
+  display: grid;
+}
+
+.rsvp-form input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rsvp-form fieldset span {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 245, 0.78);
+  box-shadow: 0 10px 26px rgba(92, 56, 48, 0.08);
+  cursor: pointer;
+}
+
+.rsvp-form input[type="radio"]:checked + span {
+  border-color: var(--rose-deep);
+  color: #fffaf5;
+  background: var(--rose-deep);
+}
+
+.rsvp-form__comments {
+  display: grid;
+  gap: 8px;
+}
+
+.rsvp-form textarea {
+  width: 100%;
+  min-height: 116px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--ink);
+  font: 1rem/1.5 "Trebuchet MS", Arial, sans-serif;
+  background: rgba(255, 250, 245, 0.84);
+  box-shadow: 0 10px 26px rgba(92, 56, 48, 0.08);
+}
+
+.rsvp-form textarea:focus,
+.rsvp-form input[type="radio"]:focus-visible + span {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.rsvp-form button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 999px;
+  color: #fffaf5;
+  font: 700 0.84rem/1 "Trebuchet MS", Arial, sans-serif;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  background: var(--rose-deep);
+  box-shadow: 0 12px 30px rgba(140, 64, 81, 0.26);
+  cursor: pointer;
+}
+
+.rsvp-contact a {
+  color: var(--rose-deep);
+  font-weight: 700;
 }
 
 .petals span {
